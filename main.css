@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #3ce7e7, #bfe73c );
+    background-size: 400% 400%;
+    animation: gradient 15s ease initial;
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+.container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; 
+  padding: 10px;
+}
+
+.button {
+  margin: 5px 10px;
+}
+
+.pets {
+flex-flow: row wrap;
+display: flex;
+
+}
+
+.pet {
+  border: 3px solid black;
+  margin: 5px;
+  text-align: center;
+  width: 100px;
+  height: 350px;
+}
+
+.pet img {
+  width: 100px;
+  height: 100px;
+}
+
+.button {
+  display: flex;
+  
+}
+
+/* .pet-specialSkill {
+  border-bottom: black;
+} */
+
+
+.pet-name {
+  background-color: royalblue;
+  text-size-adjust: 32px;
+}
+
+.pet-specialSkill {
+  border-bottom: solid royalblue;
+}
+
+
+.pet-type {
+  position: relative;
+}
+
+
