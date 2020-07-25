@@ -70,6 +70,10 @@ display: flex;
   border-bottom: solid royalblue;
 }
 
+.pet-color{
+border-bottom: solid royalblue;
+}
+
 
 .pet-type {
   position: relative;
