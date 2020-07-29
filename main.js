@@ -212,24 +212,56 @@ const pets = [
   }
 ];
 
+const handleButtonClick = (e) => {
+  console.log("click me!"); 
+  const buttonId = e.target.id;
+
+
+
+const selectedPets = [];
+
+for (let i = 0; i < pets.length; i++){
+  if (pets[i].type === buttonId) {
+    selectedPets.push(pets[i])
+ 
+}
+buildPetAdoption(selectedPets);
+}
+
+
+if (buttonId === 'All' || buttonId === e.currentTarget.id) {
+  buildPetAdoption(pets)
+} else {
+ buildPetAdoption(selectedPets);
+}
+}
+
+// if (buttonId === 'dog'){
+//   console.log("doggie!!!");
+// }else {
+//   console.log("its working");
+// }
+
 const printToDom = (divId, textToPrint ) => {
   const selectedDiv = document.getElementById(divId);
   selectedDiv.innerHTML = textToPrint; 
 }
 
 
-const buildPetAdoption = () => {
+
+
+const buildPetAdoption = (monkeyButts) => {
 
   let domString = '';
 
 
-for (let i=0; i < pets.length; i++) {
+for (let i=0; i < monkeyButts.length; i++) {
   domString += `<div class="pet">`
-  domString += `<div class="pet-name">${pets[i].name}</div>`
-  domString += `<img src="${pets[i].imageUrl}"/>`
-  domString += `<div class="pet-color">${pets[i].color}</div>`
-  domString += `<div class="pet-specialSkill">${pets[i].specialSkill}</div>`
-  domString += `<div class="pet-type">${pets[i].type}</div>`
+  domString += `<div class="pet-name">${monkeyButts[i].name}</div>`
+  domString += `<img src="${monkeyButts[i].imageUrl}"/>`
+  domString += `<div class="pet-color">${monkeyButts[i].color}</div>`
+  domString += `<div class="pet-specialSkill">${monkeyButts[i].specialSkill}</div>`
+  domString += `<div class="pet-type">${monkeyButts[i].type}</div>`
   domString += `</div>`
   
 }
@@ -239,5 +271,16 @@ printToDom('pets', domString);
 
 }
 
-buildPetAdoption();
+const buttonEvents = () => {
+  document.getElementById('animal-buttons').addEventListener('click', handleButtonClick);
 
+  
+}
+
+const init = () => {
+buildPetAdoption(pets);
+buttonEvents();
+
+}
+
+init();
